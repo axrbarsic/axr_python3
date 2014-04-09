@@ -1,0 +1,23 @@
+
+def rw(inf):
+	f = open('megamillions.txt', '+a')
+	f.write(inf + "\n")
+	f.close
+
+
+def mega(num):
+	import random
+	running = True
+	while running:
+		axr = input('Вы готовы выиграть деньги? y/n ')
+		if axr == 'y':
+			random.shuffle(num)
+			num2 = str(num[0:6])
+			print(num2)
+			rw(num2)
+		if axr == 'n':
+			running = False
+
+mega(list(range(56)))
+
+
